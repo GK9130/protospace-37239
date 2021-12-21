@@ -6,7 +6,6 @@
         <%# 「モデル名」にはUserモデルであれば@userを渡しましょう。%>
         <%# 「新規登録機能へのパス」は、devise導入後にrails routesを実行してdevise/registrations#createへのパスを確認し、記載してください。 %>
         <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
         
         <div class="field">
           <%= f.label :email, "メールアドレス" %><br />
@@ -25,22 +24,22 @@
 
         <div class="field">
           <%= f.label :name, "ユーザー名" %><br />
-          <%= f.text_field :name, id:"user_name" %>
+          <%= f.text_field :name %>
         </div>
 
         <div class="field">
           <%= f.label :profile, "プロフィール" %><br />
-          <%= f.text_area :profile, class: :form__text, id:"user_profile" %>
+          <%= f.text_area :profile, class: :form__text %>
         </div>
 
         <div class="field">
           <%= f.label :occupation, "所属" %><br />
-          <%= f.text_area :occupation, class: :form__text, id:"user_occupation" %>
+          <%= f.text_area :occupation, class: :form__text %>
         </div>
 
         <div class="field">
           <%= f.label :position, "役職" %><br />
-          <%= f.text_area :position, class: :form__text, id:"user_position" %>
+          <%= f.text_area :position, class: :form__text %>
         </div>
 
         <div class="actions">
